@@ -1,0 +1,26 @@
+<p>abotus works!</p>
+
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=  "let emplpyee of employees">
+        <td>{{emplpyee.id}}</td>
+        <td>{{emplpyee.name}}</td>
+        <td>{{emplpyee.Email}}</td>
+        <td>{{emplpyee.password}}</td>
+        <td><button type="button" class="btn btn-outline-primary">Edit
+          
+        </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,11 @@
+<p>profile works!</p>
+<form>
+    <div class="mb-3">
+        
+      <input type="email" [formControl]="Email" class="form-control" id="exampleInputEmail1"placeholder="Enter Email">
+    </div>
+    <div class="mb-3">
+      <input type="password" [formControl]="password" class="form-control" id="exampleInputPassword1"placeholder="Enter Password" >
+    </div>
+    <button type="submit" (click)="show()"class="btn btn-primary">Submit</button>
+  </form>
