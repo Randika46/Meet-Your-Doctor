@@ -51,7 +51,7 @@ export class PatientRegisterComponent implements OnInit {
       console.log(res)
       if(res.state){
       
-         this.router.navigate(['/profile'])
+         this.router.navigate(['/login'])
         this.alert=false;
         
       }else{
