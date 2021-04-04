@@ -55,9 +55,16 @@ export class RegisterComponent implements OnInit {
     };
 
     this.authService.registerDoc(addDoctor).subscribe(res=>{
+      (this.msg=res.message)
       console.log(res)
       if(res.state){
-        this.router.navigate(['/login'])
+      
+         this.router.navigate(['/profile'])
+        this.alert=false;
+        
+      }else{
+        this.alert=true
+      
       }
     })  
   
