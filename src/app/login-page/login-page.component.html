@@ -1,0 +1,26 @@
+
+<div ><h1>Let's go !</h1></div>
+
+<div *ngIf="alert" class="alert alert-danger" role="alert">
+    {{msg}} <a routerLink="/">Haven't account?</a>. Give it a click if you like.
+</div>
+
+<form class="f">
+    <div class="mb-3">
+        
+      <input type="email" [formControl]="email" class="form-control" id="exampleInputEmail1"placeholder="Enter Email">
+    </div>
+    <div class="mb-3">
+      <input type="password" [formControl]="password" class="form-control" placeholder="Enter Password" >
+    </div>
+
+    <button type="submit" (click)="register()"class="btn btn-info">Login</button>
+  </form>
+ 
+  
+
+<!-- <div *ngIf="isLoginError">
+  <p>Something went wrong!</p>
+</div> -->
+
+<div><img src="../../assets/smart-hospital/smart-hospital.png" width="300" height="300" alt=""></div>

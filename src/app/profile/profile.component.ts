@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl} from '@angular/forms'
+import{AuthService} from '../service/auth.service'
 
 @Component({
   selector: 'app-profile',
@@ -7,14 +8,26 @@ import { FormControl} from '@angular/forms'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-Email=new FormControl
-password=new FormControl
-  constructor() { }
+  
+ user:any;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+  this.user=this.authService.getProfile()
+  console.log(this.user);
+    
   }
-show(){
-  alert(this.Email.value)
-  alert(this.password.value)
+   
+  logout(){
+    this.authService.logout()
+    this.user.clear()
+  }
+
+  
+
+
 }
-}
+
+  
+

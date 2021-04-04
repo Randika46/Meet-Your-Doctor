@@ -1,0 +1,49 @@
+<p>Search</p>
+
+<div *ngIf="alert" class="alert alert-danger" role="alert">
+  {{msg}} <a href="#" class="alert-link">an example link</a>
+</div>
+
+<form>
+    <div class="mb-3">
+        
+      <input type="text" [formControl]="name" class="form-control" id="exampleInputEmail1"placeholder="Enter Email">
+    </div>
+    
+      
+
+    <button type="submit" (click)="search()"class="btn btn-primary">Search</button>
+  </form>
+
+  <div>
+    <select ng-model="selectDoc"  name="" id="">
+        <option *ngFor="let x of docProfiles" value="x._id">
+          <li>{{x.name}}</li>
+          <li>{{x._id}}</li>
+        
+        </option>
+        
+    </select>
+
+  </div>
+
+
+ 
+    <p>You selected: {{selectDoc}}</p>
+    
+
+<!-- <div *ngIf="isLoginError">
+  <p>Login Error</p>
+</div> -->
+{{msg}}
+
+
+<div>
+  {{docProfiles.address}}
+</div>
+
+<div class="par"><ul *ngFor="let x of docProfiles">
+  <li>{{x.name}}</li>
+  <li>{{x._id}}</li>
+
+</ul></div>

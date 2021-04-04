@@ -1,0 +1,14 @@
+.par {
+    background-color: white;
+    font-family:  'Times New Roman', Times, serif;
+    opacity: 1;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    color: rgb(12, 12, 12);
+    padding: 20px;
+    letter-spacing: 3px;
+    line-height: 25px;
+    border-radius: 20px;
+}
