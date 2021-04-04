@@ -12,6 +12,8 @@ import{Router} from '@angular/router'
 export class AppointmentComponent implements OnInit {
 
   name=new FormControl;
+  location=new FormControl;
+  speciality=new FormControl;
 
   docProfiles: any;
   selectDoc:any;
@@ -21,14 +23,16 @@ export class AppointmentComponent implements OnInit {
   alert:boolean=false;
   
   user:any;
-  doctorId:any
+  
 
 
+  isapprove:boolean=false
   
   date=new FormControl;
   time= new FormControl;
+  doctorId=new FormControl;
   
-  
+  userId: any;
 
 
   constructor(
@@ -38,30 +42,26 @@ export class AppointmentComponent implements OnInit {
   ngOnInit(
 
   ): void {
-    this.user=this.authService.getProfile()
-    console.log(this.user.details._id);
+    this.userId=this.authService.getProfile()
+    console.log(this.userId.details.id);
   }
 
   search(){
   
-    console.log(this.selectDoc)
   const user ={
     name:this.name.value,
+    location:this.location,
+    speciality:this.speciality
   
   };
-
+  console.log(user)
   this.authService.search(user).subscribe(res=>{
     
     
     this.docProfiles=res.details,
-    this.msg=res.message
-    if(res.state){
-      
-      this.alert=false;
-      
-    }else{
-      this.alert=true
-    }
+    this.msg=res.message,
+    console.log(res.message)
+
   }) 
 
 }
@@ -72,12 +72,12 @@ export class AppointmentComponent implements OnInit {
 
    
     const addPatient ={
-      date:"this.date.value",
-      id:"fdgzdfghzdfh",
-      time:"this.time.value",
-      doctorId:"this.doctorId.value",
-      patientId:"this.user.details.id.value",
-      // paymentId:"fghjhgj"
+      date:this.date.value,
+      time:this.time.value,
+      doctorId:this.doctorId.value,
+      patientId:this.userId.details.id,
+      paymentId:"fghjhgj",
+      approve:this.isapprove
 
     }
 
@@ -88,10 +88,10 @@ export class AppointmentComponent implements OnInit {
         this.msg=res.message
         if(res.state){
           
-          this.alert=false;
+          this.alert=true;
           
         }else{
-          this.alert=true
+          this.alert=false
         }
 
       })
