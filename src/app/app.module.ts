@@ -20,6 +20,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { PatientRegisterComponent } from './patient-register/patient-register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { ChannelComponent } from './channel/channel.component';
 // import {employee} from '../app/getData'
 
 
@@ -37,6 +38,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     PatientRegisterComponent,
     AppointmentComponent,
     FeedbackComponent,
+    ChannelComponent,
 
     
   ],

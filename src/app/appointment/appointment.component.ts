@@ -75,7 +75,7 @@ export class AppointmentComponent implements OnInit {
       date:this.date.value,
       time:this.time.value,
       doctorId:this.doctorId.value,
-      patientId:this.userId.details.id,
+      patientId:this.userId.details._id,
       paymentId:"fghjhgj",
       approve:this.isapprove
 
