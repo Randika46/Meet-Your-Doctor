@@ -76,7 +76,9 @@ approvedAppointment(appointmentId:any){
 
 
 
-
+sendFeedback(feedbackDetail : any){
+  return this.http.post<any>("http://localhost:8080/feedback/add",feedbackDetail).pipe(map(res=>res));  
+}
 
 
 

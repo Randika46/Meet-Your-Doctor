@@ -19,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PatientRegisterComponent } from './patient-register/patient-register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 // import {employee} from '../app/getData'
 
 
@@ -35,6 +36,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
     LoginPageComponent,
     PatientRegisterComponent,
     AppointmentComponent,
+    FeedbackComponent,
 
     
   ],

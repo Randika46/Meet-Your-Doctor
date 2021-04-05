@@ -39,7 +39,6 @@
             <input type="text" [formControl]="approvedId" class="form-control" id="id"placeholder="Paste the Id you want to approve">
             <button (click)=approvedAppointment() class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> Approve this Appointment</button>
  
-            <!-- <button  class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My  Appointments</button> -->
             <p><strong>Approved Appointments</strong></p>
             <ul *ngFor="let x of getmyappointment">
               <div class="par"*ngIf=x.approve>
@@ -130,7 +129,10 @@
             <li>{{x._id}}</li></div>
      
     
-    </ul></div>       
+    </ul>
+    <button routerLink="/feedback" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> give a feedback to the Doctor</button>
+
+  </div>       
 
 
 <footer class="w3-container w3-theme-d3 w3-padding-16">
