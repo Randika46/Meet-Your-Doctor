@@ -86,13 +86,6 @@ export class AppointmentComponent implements OnInit {
       this.authService.newAppointmentAdd(addPatient).subscribe(res=>{
         console.log(res)
         this.msg=res.message
-        if(res.state){
-          
-          this.alert=true;
-          
-        }else{
-          this.alert=false
-        }
 
       })
   }

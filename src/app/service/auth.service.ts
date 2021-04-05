@@ -35,7 +35,6 @@ loginUser(user :any){
 }
 
 Data:any
-
 sendProfile(userProfile:any){
 this.Data=userProfile
 }
@@ -54,6 +53,30 @@ newAppointmentAdd(addPatient : any){
 search(user:any){
   return this.http.post<any>( "http://localhost:8080/search",user).pipe(map(res=>res));
 }
+
+
+
+
+id:any
+getMyAppointmentDetails(userId :any){
+  this.id=userId.id
+
+  return this.http.get<any>( "http://localhost:8080/appointment/doctor/"+this.id).pipe(map(res=>res));
+}
+
+id2:any
+approvedAppointment(appointmentId:any){
+  this.id2=appointmentId._id
+  console.log(this.id2);
+  return this.http.put<any>("http://localhost:8080/appointment/approve/"+this.id2,"").pipe(map(res=>res));
+}
+
+
+
+
+
+
+
 
 
 
