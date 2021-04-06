@@ -14,7 +14,8 @@ export class RegisterComponent implements OnInit {
   name=new FormControl;
   id=new FormControl;
   channelingCentre =new FormControl;
-  address=new FormControl;
+  province=new FormControl;
+  district=new FormControl;
   hospital=new FormControl;
   nursingHome=new FormControl;
   qualifications=new FormControl;
@@ -41,7 +42,10 @@ export class RegisterComponent implements OnInit {
       name:this.name.value,
       id:this.id.value,
       channelingCentre:this.channelingCentre.value,
-      address:this.address.value,
+      address: {
+        province: this.province.value,
+        district: this.province.value
+    },
       hospital:this.hospital.value,
       nursingHome:this.nursingHome.value,
       qualifications:this.qualifications.value,
@@ -53,13 +57,13 @@ export class RegisterComponent implements OnInit {
 
 
     };
-
+    console.log(addDoctor)
     this.authService.registerDoc(addDoctor).subscribe(res=>{
       (this.msg=res.message)
       console.log(res)
       if(res.state){
       
-         this.router.navigate(['/login'])
+         this.router.navigate(['/'])
         this.alert=false;
         
       }else{
